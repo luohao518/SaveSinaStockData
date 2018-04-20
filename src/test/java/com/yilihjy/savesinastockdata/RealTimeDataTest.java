@@ -17,7 +17,7 @@ public class RealTimeDataTest {
 
 	@Test
 	public void testGetRealTimeDataObjectsMethod() throws UnsupportedEncodingException {
-		String[] li ={"s_sh000001","s_sz399001","sz000002","sh603377","sz300443"};
+		String[] li ={"s_sh000001","s_sz399001","sz000002","sh603377","sz300443","sh204001"};
 		List<RealTimeDataPOJO> list = RealTimeData.getRealTimeDataObjects(li);
 		assertEquals("上证指数",list.get(0).getName());
 		assertEquals(0.0,list.get(0).getOpen(),0.0);
@@ -28,6 +28,7 @@ public class RealTimeDataTest {
 		assertEquals(RealTimeDataPOJO.STOCK,list.get(2).getType());
 		assertEquals("东方时尚",list.get(3).getName());
 		assertEquals("金雷风电",list.get(4).getName());
+		System.out.println(list.get(5).getSell1Pricae());
 	}
 
 }

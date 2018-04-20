@@ -52,50 +52,50 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {  
-                authentication(userName: USER_NAME, password: PASSWORD)  
-            } 
-            
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
-                authentication(userName: USER_NAME, password: PASSWORD)
-            }
-            
-            pom.project {
-                name 'SaveSinaStockData'
-                packaging 'jar'
-                description 'Encapsulae sina stock API by java.Support history data and real time data.'
-                url 'https://github.com/yilihjy/SaveSinaStockData'
-
-                scm {
-                    url 'https://github.com/yilihjy/SaveSinaStockData.git'
-                    connection 'scm:git:https://github.com/yilihjy/SaveSinaStockData.git'
-                    developerConnection 'scm:git:https://github.com/yilihjy/SaveSinaStockData.git'
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'yilihjy'
-                        name 'yilihjy'
-                    }
-                }
-            }
-        }
-    }
-}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//
+//            beforeDeployment {  deployment -> signing.signPom(deployment) }
+//
+//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
+//                authentication(userName: USER_NAME, password: PASSWORD)
+//            }
+//
+//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
+//                authentication(userName: USER_NAME, password: PASSWORD)
+//            }
+//
+//            pom.project {
+//                name 'SaveSinaStockData'
+//                packaging 'jar'
+//                description 'Encapsulae sina stock API by java.Support history data and real time data.'
+//                url 'https://github.com/yilihjy/SaveSinaStockData'
+//
+//                scm {
+//                    url 'https://github.com/yilihjy/SaveSinaStockData.git'
+//                    connection 'scm:git:https://github.com/yilihjy/SaveSinaStockData.git'
+//                    developerConnection 'scm:git:https://github.com/yilihjy/SaveSinaStockData.git'
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The Apache Software License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                        distribution 'repo'
+//                    }
+//                }
+//
+//                developers {
+//                    developer {
+//                        id 'yilihjy'
+//                        name 'yilihjy'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
